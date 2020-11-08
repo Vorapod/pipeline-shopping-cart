@@ -24,10 +24,12 @@ pipeline {
     stage ('Run API Test') {
       steps {
         sh label: 'robot api', script: '''cd test/api
+        sleep 5
         robot checkout-success-template.robot'''
       }
       post {
         always {
+          robot outputPath: 'test/api', passThreshold: 100.0
           sh label: 'docker-compose', script: '''docker-compose down'''
         }
       }
