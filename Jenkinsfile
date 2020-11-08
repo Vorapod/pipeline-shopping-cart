@@ -24,7 +24,7 @@ pipeline {
     stage ('Run API Test') {
       steps {
         sh label: 'robot api', script: '''cd test/api
-        sleep time: 1, unit: 'MINUTES'
+        sleep 60
         robot checkout-success-template.robot'''
       }
       post {
