@@ -15,7 +15,7 @@
 ## set up application
 ```sh
   # cd ..
-  docker-compose up -d --build --force
+  docker-compose up -d --build --force-recreate
 ```
 
 ## run api test
